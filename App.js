@@ -12,8 +12,8 @@ export default function App() {
   const [n2, setN2] = useState('');
   const [resultado, setResultado] = useState(0);
 
-  const somar = () => {
-    const r = parseInt(n1) + parseInt(n2);
+  const multiplicar = () => {
+    const r = parseInt(n1) * parseInt(n2);
     setResultado(r);
   };
 
@@ -21,7 +21,7 @@ export default function App() {
     <View style={styles.tudo}>
 
       <Text style={styles.titulo}>
-        Somando dois Valores
+        multiplicando dois Valores
       </Text>
 
       <Input
@@ -37,8 +37,8 @@ export default function App() {
       />
 
       <Botao
-        titulo="Somar"
-        onPress={somar}
+        titulo="multiplicar"
+        onPress={multiplicar}
       />
 
       <Resultado valor={resultado} />
