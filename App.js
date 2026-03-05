@@ -10,18 +10,30 @@ export default function App() {
 
   const [n1, setN1] = useState('');
   const [n2, setN2] = useState('');
-  const [resultado, setResultado] = useState(0);
+  const [resultado1, setResultado1] = useState(0);
+  const [resultado2, setResultado2] = useState(0);
+  const [resultado3, setResultado3] = useState(0);
+  const [resultado4, setResultado4] = useState(0);
 
-  const multiplicar = () => {
-    const r = parseInt(n1) * parseInt(n2);
-    setResultado(r);
+  const operacoes = () => {
+    const r1 = parseInt(n1) + parseInt(n2);
+    setResultado1(r1);
+
+    const r2 = parseInt(n1) - parseInt(n2);
+    setResultado2(r2);
+
+    const r3 = parseInt(n1) * parseInt(n2);
+    setResultado3(r3);
+
+    const r4 = parseInt(n1) / parseInt(n2);
+    setResultado4(r4);
   };
 
   return (
     <View style={styles.tudo}>
 
       <Text style={styles.titulo}>
-        multiplicando dois Valores
+        Fazendo 4 Operações matemáticas
       </Text>
 
       <Input
@@ -37,11 +49,16 @@ export default function App() {
       />
 
       <Botao
-        titulo="multiplicar"
-        onPress={multiplicar}
+        titulo="calcular"
+        onPress={operacoes}
       />
 
-      <Resultado valor={resultado} />
+      <Resultado 
+      v1={resultado1}
+      v2={resultado2}
+      v3={resultado3}
+      v4={resultado4} 
+      />
 
     </View>
   );
